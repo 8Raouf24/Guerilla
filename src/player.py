@@ -1,4 +1,4 @@
-from card import CardDeck
+from src.card import CardDeck
 from loguru import logger
 
 class Player:

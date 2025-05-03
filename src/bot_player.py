@@ -1,6 +1,6 @@
-from player import Player
+from src.player import Player
 import random 
-from card import CardDeck
+from src.card import CardDeck
 from loguru import logger
 
 class BotPlayer(Player):

@@ -76,9 +76,9 @@ git clone https://github.com/8Raouf24/guerilla
 cd guerilla
 
 2. 🐍 Run the game:
-python3 main.py
+python3 game.py
 
 
 3. ☠️ Choose the number of players (2–8)
 
-4. 🧠 Bots will be created automatically if coded in.
+4. 🧠 Choose the number of Bots (you can similate a game between bots only).

@@ -2,11 +2,11 @@ from loguru import logger
 import numpy as np
 import random
 
-from player import Player
-from bot_player import  RandomBotPlayer
-from card import CardDeck
-from draw import BoardDrawer
-from __init__ import war_characters, return_random_name
+from src.player import Player
+from src.bot_player import  RandomBotPlayer
+from src.card import CardDeck
+from src.draw import BoardDrawer
+from src.__init__ import war_characters, return_random_name
 
 
 class GameMaster:
@@ -180,8 +180,6 @@ class GameMaster:
 
 
 
-game = GameMaster()
-game.init_game()
-game.play_game()
+
 
 
