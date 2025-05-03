@@ -7,29 +7,26 @@ from typing import List
 
 
 class CardDeck():
-    deck = []
+    
+    shapes = ['heart','spade','club','diamond']
+    numbers = list(range(1,14))
+    deck = list(itertools.product(shapes,numbers))
 
-    @classmethod
-    def _init_deck(self) -> None:
-        #Creating our deck of cards with shapes and values
-
-        shapes = ['heart','spade','club','diamond']
-        numbers = list(range(1,14))
-        deck = list(itertools.product(shapes,numbers))
-
-        #King of diamonds = 0 
-        for i in range(len(deck)):
-            if (deck[i][0] == "carreau" ) & (deck[i][1] == 13):
-                deck[i] = ("carreau",0)
+    #King of diamonds = 0 
+    for i in range(len(deck)):
+        if (deck[i][0] == "diamond" ) & (deck[i][1] == 13):
+            deck[i] = ("diamond",0)
 
 
-        deck = [{'shape': shape, 'value': value} for (shape, value) in deck]
+    deck = [{'shape': shape, 'value': value} for (shape, value) in deck]
+    #Shuffling the deck
+    random.Random(24).shuffle(deck)
 
 
 
-        #Shuffling the deck
-        random.shuffle(deck)
-        print(deck)
+
+        
+        
 
 
     @classmethod
@@ -46,5 +43,13 @@ class CardDeck():
         """
         self.deck.append(card)
 
+    @classmethod
+    def search_card(self,value):
+        """
+        Return a card to the end of the deck
+        """
+        for i in range(len(self.deck)) :
+            if self.deck[i]['value']==value:
+                return self.deck.pop(i)
+                
 
-CardDeck()._init_deck()
